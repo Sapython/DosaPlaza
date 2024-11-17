@@ -1,0 +1,43 @@
+<img src="assets/qrMenu/background.jpg" alt="">
+<div class="center">
+    <p class="itemsIncart">Items in cart <span>{{cartItems}}</span></p>
+    <form [formGroup]="customerDetailForm" (ngSubmit)="confirmOrder()">
+        <!-- <mat-form-field [class]="name.focus ? 'focus' : ''" appearance="outline">
+            <mat-label>Name</mat-label>
+            <input matInput type="text" name="name" placeholder="Name" #name>
+        </mat-form-field>
+        <mat-form-field [class]="email.focus ? 'focus' : ''" appearance="outline">
+            <mat-label>Email</mat-label>
+            <input matInput type="text" name="email" placeholder="Email" #email>
+        </mat-form-field>
+        <mat-form-field [class]="phone.focus ? 'focus' : ''" appearance="outline">
+            <mat-label>Phone</mat-label>
+            <input matInput type="text" name="phone" placeholder="Phone" #phone>
+        </mat-form-field>
+        <mat-form-field [class]="notes.focus ? 'focus' : ''" appearance="outline">
+            <mat-label>Notes</mat-label>
+            <input matInput type="text" name="notes" placeholder="Notes" #notes>
+        </mat-form-field> -->
+        <input matInput type="text" formControlName="name" name="name" placeholder="Name" #name>
+        <input matInput type="text" formControlName="email" name="email" placeholder="Email" #email>
+        <input matInput type="text" formControlName="phone" name="phone" placeholder="Phone" #phone>
+        <input matInput type="text" formControlName="notes" name="notes" placeholder="Notes" #notes>
+        <button>Confirm Order</button>
+    </form>
+    <!-- <table>
+        <tr>
+            <th>Product</th>
+            <th>Quantity</th>
+            <th>Price</th>
+        </tr>
+        <tr *ngFor="let item of finalProducts">
+            <td>{{item.dishName}}</td>
+            <td>{{item.quantity}}</td>
+            <td>{{item.onlinePrice}}</td>
+        </tr>
+        <tr>
+            <td colspan="2">Final Price With Taxes</td>
+            <td>{{finalSum}}</td>
+        </tr>
+    </table> -->
+</div>

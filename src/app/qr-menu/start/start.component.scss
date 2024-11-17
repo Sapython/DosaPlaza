@@ -1,0 +1,46 @@
+@keyframes fadeIn {
+    from{
+        opacity: 0;
+        scale:.9;
+        transform: rotate(0deg);
+    }
+    to{
+        opacity: 1;
+        scale:1;
+        transform: rotate(360deg);
+    }
+}
+img.bg {
+  position: fixed;
+  top: 0px;
+  left: 0px;
+  width: 100vw;
+  height: 100vh;
+}
+main {
+  position: absolute;
+  z-index: 2s;
+  margin-top: 40vh;
+  .splashBack{
+    width: 100vw;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    .splashOuter {
+        width: 100vw;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        height: 100%;
+        .splashTxt {
+          color: white;
+          font-size: 21px;
+          font-weight: 500;
+        }
+        img.splashImage{
+            animation: fadeIn alternate 4s infinite cubic-bezier(0.65, 0, 0.35, 1);;
+        }
+      }
+  }
+}

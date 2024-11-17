@@ -1,0 +1,30 @@
+<div id="card">
+  <div uk-spinner="ratio: 3" *ngIf="!loaded"></div>
+  <img [src]="recipe.photos ? recipe.photos[0] : 'assets/img/pexels-photo-1640777.jpeg'" (load)="loaded=true"
+    loading="lazy" />
+  <div id="card-content">
+    <div>
+      <h3 [attr.uk-tooltip]="recipe.name">{{serialNumber}}.&nbsp;&nbsp;&nbsp;{{ recipe.name }}</h3>
+      <p>{{ recipe.id }}</p>
+    </div>
+    <div id="price">₹{{ recipe.finalPrice }}</div>
+    <div id="buttons">
+      <button class="primary-btn" (click)="viewRecipe.emit()">
+        <ng-container *ngIf="windowWidth > 330">View</ng-container>
+        <ng-container *ngIf="windowWidth < 330"><i class="fa-solid fa-eye"></i></ng-container>
+      </button>
+      <button class="primary-btn" (click)="requestEdit.emit()">
+        <ng-container *ngIf="windowWidth > 330">Edit</ng-container>
+        <ng-container *ngIf="windowWidth < 330"><i class="fa-solid fa-pen"></i></ng-container>
+      </button>
+      <button class="primary-btn" (click)="requestDuplicate.emit()">
+        <ng-container *ngIf="windowWidth > 330">Duplicate</ng-container>
+        <ng-container *ngIf="windowWidth < 330"><i class="fa-solid fa-copy"></i></ng-container>
+      </button>
+      <button class="primary-btn" (click)="requestDelete.emit()">
+        <ng-container *ngIf="windowWidth > 330">Delete</ng-container>
+        <ng-container *ngIf="windowWidth < 330"><i class="fa-solid fa-trash"></i></ng-container>
+      </button>
+    </div>
+  </div>
+</div>

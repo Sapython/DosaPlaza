@@ -1,0 +1,74 @@
+<section>
+  <h3>
+    Welcome back{{
+      dataProvider.userData?.displayName
+        ? ", " + dataProvider.userData!.displayName
+        : ""
+    }}!
+  </h3>
+  <div id="quick-links">
+    <h4>Quick Links</h4>
+    <div id="buttons">
+      <button routerLink="../stock" [queryParams]="{ openModal: true }">
+        Stock
+      </button>
+      <button routerLink="../utilities" [queryParams]="{ openModal: true }">
+        Utilities
+      </button>
+      <button routerLink="../tasks" [queryParams]="{ openModal: true }">
+        Tasks
+      </button>
+      <button routerLink="../recipes" [queryParams]="{ openModal: true }">
+        Recipes
+      </button>
+      <button routerLink="../employees" [queryParams]="{ openModal: true }">
+        Employees
+      </button>
+      <button routerLink="../customers" [queryParams]="{ openModal: true }">
+        Customers
+      </button>
+    </div>
+    <button id="logout">Logout</button>
+  </div>
+  <div id="charts">
+    <canvas id="recipe-graph"></canvas>
+    <canvas id="stock-pie"></canvas>
+  </div>
+  <div id="panels">
+    <div class="panel">
+      <h4>Stock</h4>
+      <p>Edit or view stock</p>
+      <button class="primary-btn" routerLink="../stock">
+        <i class="fa-solid fa-eye"></i>View
+      </button>
+    </div>
+    <div class="panel">
+      <h4>Tasks</h4>
+      <p>Edit or view tasks</p>
+      <button class="primary-btn" routerLink="../tasks">
+        <i class="fa-solid fa-eye"></i>View
+      </button>
+    </div>
+    <div class="panel">
+      <h4>Recipes</h4>
+      <p>Edit or view recipes</p>
+      <button class="primary-btn" routerLink="../recipes">
+        <i class="fa-solid fa-eye"></i>View
+      </button>
+    </div>
+    <div class="panel">
+      <h4>Employees</h4>
+      <p>Edit or view employees</p>
+      <button class="primary-btn" routerLink="../employees">
+        <i class="fa-solid fa-eye"></i>View
+      </button>
+    </div>
+    <div class="panel">
+      <h4>Customers</h4>
+      <p>Edit or view customers</p>
+      <button class="primary-btn" routerLink="../customers">
+        <i class="fa-solid fa-eye"></i>View
+      </button>
+    </div>
+  </div>
+</section>

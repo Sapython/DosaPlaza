@@ -1,0 +1,21 @@
+{
+  "projects": {
+    "default": "fbms-shreeva-demo"
+  },
+  "targets": {
+    "fbms-shreeva-demo": {
+      "hosting": {
+        "DosaPlazaRestaurant": [
+          "dosaplazaqr"
+        ]
+      }
+    },
+    "dosaplaza-cv": {
+      "hosting": {
+        "DosaPlazaRestaurant": [
+          "dosaplazaqr"
+        ]
+      }
+    }
+  }
+}

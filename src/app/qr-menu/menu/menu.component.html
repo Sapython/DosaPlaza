@@ -1,0 +1,42 @@
+<img class="spashBack" src="assets/qrImg/Login.jpg" alt="">
+<div class="main">
+    <div class="header">
+        <img class="headerImg" src="/assets/img/Mahajan logo.png" alt="">
+        <div class="headerBody">
+            <div class="mainTitle">Dosa plaza</div>
+            <div class="subTitle">Breakfast, Lunch, Dinner</div>
+            <div class="time">
+                <span class="open">Open Now</span>
+                <span class="openTime"> - 9am - 6pm (Today)</span>
+            </div>
+        </div>
+    </div>
+    <mat-tab-group>
+        <mat-tab [label]="category.displayName" *ngFor="let category of categories">
+            <div class="title">Breakfast</div>
+            <div class="cardOuter" *ngFor="let product of filterRecipes(category.id)">
+                <div class="card">
+                    <img class="cardImg" [src]="product.images[0]" alt="">
+                    <div class="cardBody">
+                        <div class="cardTitle">{{product.dishName}}</div>
+                        <div class="cardSubTitle">{{product.orderType.name}}</div>
+                        <div class="stars">
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                            <i class="fa-solid fa-star"></i>
+                        </div>
+                        <div class="cardVoteTitle">75 Votes</div>
+                        <div class="cardPriceTitle">₹ {{product.onlinePrice}}</div>
+                    </div>
+                </div>
+                <div class="button" (click)="addToCart(product)">ADD +</div>
+            </div>
+            <div class="cart" (click)="continueToCheckout()">
+                <i class="fas fa-shopping-cart"></i>
+                <span>{{dataProvider?.qrProducts?.length}}</span>
+            </div>
+        </mat-tab>
+    </mat-tab-group>
+</div>

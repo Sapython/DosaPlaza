@@ -1,0 +1,67 @@
+.list-card-image .item-img {
+  width: 100% !important;
+  height:310px !important;
+  object-fit: cover;
+  height: 100%;
+}
+.uk-inline-clip{
+  display: block !important;
+}
+@media screen and (max-width : 768px) {
+  .list-card-image .item-img {
+    height: 225px !important;
+    width: 100% !important;
+  }
+
+}
+
+.text-desc {
+	color: inherit;
+	overflow: hidden;
+	white-space: nowrap;
+	font-size: 15px;
+	text-overflow: ellipsis
+}
+.dish-contents > .dishHead{
+  display: flex;
+  flex-direction: column;
+  align-items:flex-start; 
+}
+.dish-contents > .dishHead > .name{
+  font-size: 18px;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+.dish-contents > .dishHead > .pricing > p > span{
+  font-size: 20px;
+  padding:10px;
+  background-color: #dadada;
+  color:rgb(70, 70, 70);
+  font-weight: bold;
+  font-family: 'Roboto';
+  border-radius: 10px;
+}
+.dish-contents > .dishHead > .pricing > div{
+  display: flex;
+  border-radius: 5px;
+  padding:0px 5px 0px 5px;
+}
+.dish-contents > .dishHead > .pricing > div > button{
+  border: none;
+  color: rgb(70, 70, 70);
+  outline: none;
+  background: none;
+  margin-right: 20px;
+  border-radius: 7px;
+  font-size: 17px;
+  font-weight: bold;
+  padding:0px 15px;
+  font-family: 'Roboto';
+  background-color: #dadada;
+}
+.dish-contents > .dishHead > .pricing > div > button.active{
+  background-color: var(--color-two);
+}
+.dish-contents > .dishHead > .pricing > div > button:hover{
+  background-color: var(--color-two-lighter);
+}

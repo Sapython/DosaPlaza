@@ -1,0 +1,41 @@
+section .container .signupBx .formBx{
+    left:50%;
+    transform:translateX(-50%);
+    width:800px !important;
+}
+section .container .signinBx .formBx {
+    left:50%;
+    transform:translateX(-50%);
+    width:800px !important;
+}
+section .container{
+    width:800px;
+}
+.formBx > form{
+    width:800px !important;
+}
+section .container .signupBx{
+    pointer-events: all;
+}
+@media screen and (max-width: 768px) {
+    section .container .signupBx .formBx{
+        left:50%;
+        transform:translateX(-50%);
+        width:100%;
+    }
+    section .container .signinBx .formBx {
+        left:50%;
+        transform:translateX(-50%);
+        width:100%;
+    }
+    section .container{
+        width:100%;
+    }
+    .formBx > form{
+        width:100% !important;
+    }
+    section .container .signupBx{
+        pointer-events: all;
+    }
+}
+    

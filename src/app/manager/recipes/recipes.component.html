@@ -1,0 +1,26 @@
+<section>
+  <div class="topBar">
+    <div class="actions">
+      <button (click)="addRecipe()">Add Recipe</button>
+      <button (click)="manageCategory()">Manage Category</button>
+    </div>
+    <div class="search">
+      <input type="search" (input)="searched($event)">
+      <i class="fa-solid fa-magnifying-glass"></i>
+    </div>
+    <mat-paginator *ngIf="recipes" [length]="recipeLength" [pageSize]="pageSize"
+      [pageSizeOptions]="[10, 20, 30, 40, 50, 100, 500]" (page)="getNextRecipes($event)" aria-label="Select page">
+    </mat-paginator>
+  </div>
+  <div *ngIf="!recipesLoaded" uk-spinner="ratio: 3" id="loading"></div>
+  <div id="recipe-cards" *ngIf="recipesLoaded">
+    <app-recipe-card *ngFor="let recipe of filteredRecipes.length > 0 ? filteredRecipes : recipes; let i = index;"
+      [serialNumber]="i + 1 + serialNumberAdditionalCounter" [recipe]="recipe" (requestEdit)="editRecipe(recipe)"
+      (requestDelete)="deleteRecipe(recipe.id)" (requestDuplicate)="duplicateRecipe(recipe)" (viewRecipe)="viewRecipe(recipe)"></app-recipe-card>
+  </div>
+  <div *ngIf="noRecipe" class="noRecipesFound">
+    <p>No recipes found</p>
+  </div>
+</section>
+
+<!-- <app-confirm-delete-modal (confirmDelete)="deleteRecipe()"></app-confirm-delete-modal> -->
